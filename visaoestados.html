@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Power BI Dashboard Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			body {
+				background: #fff;
+				font-family: 'Source Sans Pro', sans-serif;
+				font-size: 16pt;
+				font-weight: 300;
+				line-height: 1.75em;
+				color: #888;
+			}
+			.container {
+				max-width: 800px;
+				margin: auto;
+				background: #fff;
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+			h2 {
+				color: #0057a3;
+			}
+			ul {
+				padding-left: 20px;
+			}
+			li {
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/Avatar.jpg" alt="" /></span>
+							<h1 id="title">Jan Lobo</h1>
+							<p>Digital Innovator</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Portfolio</h2>
+							</header>
+							<h3>Unified View of States Based on Indicators</h3>
+							<p>
+								Develop a practical example of data visualization in Power BI, applying various features such as API data connections, data transformation, aggregations, and data cleaning using Power Query. Optimize visualizations for better understanding and maintenance while leveraging DAX measures with specific contexts.
+								The data used comes from open sources provided by official Brazilian entities such as IBGE and IPEA.</p>
+
+
+								<div class="row">
+								<div class="col-11 col-12-mobile">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/VisaoEstados.png" alt="" /></a>
+										<header>
+											<h3>Main Dashboard</h3>
+										</header>
+									</article>
+								</div>
+							<iframe title="Visao Estados V 5.6" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=b146cce7-c0e9-4d57-832c-355b3213b315&autoAuth=true&ctid=8d2bc08c-c086-48e3-bcee-837c62653af6" frameborder="0" allowFullScreen="true"></iframe>
+
+							<h2>Main concepts</h2>
+							<div class="container">
+								<h3 align="left">Project Objective</h3>
+								<ul align="left">
+									<li>Develop a single dashboard displaying key indicators (social, economic, financial, education, health, and security) per state, showing trends and rankings.</li>
+									<li>Ensure a connected and easily updatable database using official Brazilian data sources such as IBGE and IPEA.</li>
+								</ul>
+							
+								<h3 align="left">Model Structure</h3>
+								<ul align="left">
+									<li>Consolidate all indicators into a single table.</li>
+									<li>Create auxiliary tables to support ranking calculations and indicator consolidation.</li>
+									<li>Ensure all data dynamically updates based on state abbreviations (UF codes).</li>
+								</ul>
+							
+								<h3 align="left">Measures & Calculations</h3>
+								<ul align="left">
+									<li>Selection control for filters.</li>
+									<li>Indicator trend analysis.</li>
+									<li>Latest available values.</li>
+									<li>State ranking based on weighted indicator comparisons.</li>
+								</ul>
+							
+								<h3 align="left">Visual Design</h3>
+								<ul align="left">
+									<li>Theme inspired by Brazil’s national colors.</li>
+									<li>State selection via interactive map.</li>
+									<li>Tooltips displaying trends and rankings per indicator.</li>
+									<li>Ranking table showcasing trend scores and current positioning based on weighted positive indicators.</li>
+									<li>KPIs with help (?) icons explaining each indicator.</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p>If you liked the content and 
+								portfolio and would like to get in touch, send me a message.</p>
+
+							<form method="post" action="#">
+								<div class="row">
+									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="col-12">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="col-12">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy;  All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
