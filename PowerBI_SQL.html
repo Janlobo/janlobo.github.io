@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Power BI Dashboard Project</title>
+		<title>Using SQL to Help PowerBI</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -89,55 +89,32 @@
 							<header>
 								<h2>Portfolio</h2>
 							</header>
-							<h3>Unified View of States Based on Indicators</h3>
+							<h3>Using SQL to Help PowerBI</h3>
 							<p>
-								Develop a practical example of data visualization in Power BI, applying various features such as API data connections, data transformation, aggregations, and data cleaning using Power Query. Optimize visualizations for better understanding and maintenance while leveraging DAX measures with specific contexts.
-								The data used comes from open sources provided by official Brazilian entities such as IBGE and IPEA.</p>
+								Get rid of useless information from your semantic model. How to reduce a Power BI file from 2 GB to 28 MB.
+							</p>
+							<div align="left" class=""col-11 col-12-mobile"">
+								<font size="4">
+									<p>In a recent data analysis study to understand how federal deputies in Brazil spend their parliamentary quota (Study published on my LinkedIn at <a href="https://www.linkedin.com/posts/janlobo_um-bilh%C3%A3o-de-reais-paraqu%C3%AA-mesmo-activity-7281818691871080451-3PXC?utm_source=social_share_send&utm_medium=member_desktop_web">LinkedIn</a>)</p>
 
+									<p>I had to use a database of CNPJs (identification of Brazilian companies) extracted from the website of the Brazilian Federal Revenue Service, which contained, at the time, almost 63 million records.
+									This data was used in the federal deputies' spending dashboard, where I categorized the expenses by the activity of the company providing the services.
+									This caused a considerable increase in the database and left the PowerBI file with almost 2GB in size.</p>
 
-								<div class="row">
-								<div class="col-11 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/VisaoEstados.png" alt="" /></a>
-										<header>
-											<h3>Main Dashboard</h3>
-											<h4>Needs a Microsoft PowerBI Service account</h4>
-										</header>
-									</article>
-								</div>
-							<iframe title="Visao Estados V 5.6" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=b146cce7-c0e9-4d57-832c-355b3213b315&autoAuth=true&ctid=8d2bc08c-c086-48e3-bcee-837c62653af6" frameborder="0" allowFullScreen="true"></iframe>
+									<p>The solution I found was as follows:</p>
 
-							<h2>Main concepts</h2>
-							<div class=""col-11 col-12-mobile"">
-								<h3 align="left">Project Objective</h3>
-								<ul align="left">
-									<li>Develop a single dashboard displaying key indicators (social, economic, financial, education, health, and security) per state, showing trends and rankings.</li>
-									<li>Ensure a connected and easily updatable database using official Brazilian data sources such as IBGE and IPEA.</li>
-								</ul>
-							
-								<h3 align="left">Model Structure</h3>
-								<ul align="left">
-									<li>Consolidate all indicators into a single table.</li>
-									<li>Create auxiliary tables to support ranking calculations and indicator consolidation.</li>
-									<li>Ensure all data dynamically updates based on state abbreviations (UF codes).</li>
-								</ul>
-							
-								<h3 align="left">Measures & Calculations</h3>
-								<ul align="left">
-									<li>Selection control for filters.</li>
-									<li>Indicator trend analysis.</li>
-									<li>Latest available values.</li>
-									<li>State ranking based on weighted indicator comparisons.</li>
-								</ul>
-							
-								<h3 align="left">Visual Design</h3>
-								<ul align="left">
-									<li>Theme inspired by Brazil’s national colors.</li>
-									<li>State selection via interactive map.</li>
-									<li>Tooltips displaying trends and rankings per indicator.</li>
-									<li>Ranking table showcasing trend scores and current positioning based on weighted positive indicators.</li>
-									<li>KPIs with help (?) icons explaining each indicator.</li>
-								</ul>
+									<p>I used the PostGreSQL database as a source of work and information cleaning.</p>
+
+									<p>I used Fábio Serpa's guidelines to extract all the CNPJ information. (<a href="https://github.com/fabioserpa/CNPJ-full">GitHub</a>)</p>
+
+									<p>I created a code in Python that reads the Federal Deputies' Expenses files for 2023 and 2024 on the Open Data website of the Chamber of Deputies (<a href="https://dadosabertos.camara.leg.br/">"Dados abertos da camara"</a>), which creates the tables in PostGreeSQL and loads the data. 4. In PostGree, I created a SQL to join the 2 downloaded quota databases from 2023 and 2024 (Criacao_Tabela_unificada_CNPJs.sql)</p>
+
+									<p>I created a View with several JOINs to search for additional CNPJ data and cross-reference it with the CNPJs that exist in the Federal Deputies' expenditure table. This way, the CNPJs that are not in the quota table will be disregarded. This reduced the number of rows from almost 63 million to 30 thousand rows.</p>
+
+									<p>Returning to Power BI, I obtain the data by referencing this view.</p>
+
+									<p>Check the complete information in my <b><a href="https://github.com/Janlobo/Using-SQL-to-Help-PowerBI">Github</b></a></p>
+								</font>
 
 							</div>
 						</div>
