@@ -103,15 +103,14 @@
 
 									<p>The solution I found was as follows:</p>
 
-									<p>I used the PostGreSQL database as a source of work and information cleaning.</p>
-
-									<p>I used Fábio Serpa's guidelines to extract all the CNPJ information. (<a href="https://github.com/fabioserpa/CNPJ-full">GitHub</a>)</p>
+									<p>I used the PostGreSQL database as a source of work and information cleaning and 
+										used Fábio Serpa's guidelines to extract all the CNPJ information. (<a href="https://github.com/fabioserpa/CNPJ-full">GitHub</a>)</p>
 
 									<p>I created a code in Python that reads the Federal Deputies' Expenses files for 2023 and 2024 on the Open Data website of the Chamber of Deputies (<a href="https://dadosabertos.camara.leg.br/">"Dados abertos da camara"</a>), which creates the tables in PostGreeSQL and loads the data. 4. In PostGree, I created a SQL to join the 2 downloaded quota databases from 2023 and 2024 (Criacao_Tabela_unificada_CNPJs.sql)</p>
 
 									<p>I created a View with several JOINs to search for additional CNPJ data and cross-reference it with the CNPJs that exist in the Federal Deputies' expenditure table. This way, the CNPJs that are not in the quota table will be disregarded. This reduced the number of rows from almost 63 million to 30 thousand rows.</p>
 
-									<p>Returning to Power BI, I obtain the data by referencing this view.</p>
+									<p>Returning to Power BI, I obtain the data by referencing this SQL view.</p>
 
 									<p>Check the complete information in my <b><a href="https://github.com/Janlobo/Using-SQL-to-Help-PowerBI">Github</b></a></p>
 								</font>
